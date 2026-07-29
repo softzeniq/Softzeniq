@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LayoutDashboard, Users, Settings, FolderKanban, BarChart3, LogOut } from "lucide-react";
 
+import { MobileSidebar } from "@/components/dashboard/MobileSidebar";
+
 export const metadata: Metadata = {
   title: "Dashboard | SoftZeniq",
   description: "Admin Dashboard for SoftZeniq",
@@ -14,7 +16,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex h-screen w-full bg-slate-50 dark:bg-slate-950 overflow-hidden text-slate-900 dark:text-slate-50 font-sans">
-      {/* Sidebar */}
+      {/* Desktop Sidebar */}
       <aside className="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950/50 flex flex-col justify-between hidden md:flex">
         <div className="px-6 py-8">
           <Link href="/softzeniq" className="flex items-center gap-2">
@@ -66,7 +68,8 @@ export default function DashboardLayout({
       {/* Main Content */}
       <main className="flex-1 flex flex-col h-full relative overflow-y-auto">
         <header className="h-16 flex items-center justify-between px-6 md:px-8 border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md sticky top-0 z-10">
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center gap-3 md:hidden">
+            <MobileSidebar />
             <span className="font-bold text-lg">SoftZeniq</span>
           </div>
           <div className="flex items-center gap-4 ml-auto">
