@@ -1,5 +1,5 @@
 "use client";
-import { services } from "@/data/Service";
+import { DynamicIcon } from "../shared/DynamicIcon";
 import React, { useCallback, useEffect, useRef } from "react";
 
 function cn(...classes: (string | boolean | undefined | null)[]): string {
@@ -144,26 +144,26 @@ function Marquee({
   );
 }
 
-export default function MarqueeService() {
+export default function MarqueeService({ services }: { services: any[] }) {
   return (
     <section className="relative overflow-hidden py-2 sm:py-6">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="relative overflow-hidden rounded-3xl">
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent dark:from-zinc-950" />
 
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent dark:from-zinc-950" />
 
           <Marquee pauseOnHover speed={35} repeat={4} className="py-5">
-            {services.map((service) => (
+            {services?.map((service) => (
               <div
                 key={service.slug}
-                className="mx-3 flex items-center gap-3 rounded-full border border-zinc-200 bg-white px-5 py-3 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                className="mx-3 flex items-center gap-3 rounded-full border border-zinc-200 bg-white px-5 py-3 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 dark:bg-zinc-900 dark:border-zinc-800"
               >
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600">
-                  <service.icon className="h-4 w-4" />
+                  <DynamicIcon name={service.icon_name} className="h-4 w-4" />
                 </div>
 
-                <span className="text-sm font-medium whitespace-nowrap text-zinc-700">
+                <span className="text-sm font-medium whitespace-nowrap text-zinc-700 dark:text-zinc-200">
                   {service.title}
                 </span>
               </div>

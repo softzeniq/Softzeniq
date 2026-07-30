@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/utils/supabase/server";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "../shared/Revel";
@@ -26,62 +26,8 @@ function getGradientStyle(gradient: string) {
 }
 
 export default async function Portfolio() {
-  const { data: projectsData } = await supabase
-    .from("projects")
-    .select("*")
-    .eq("show_on_home", true)
-    .order("created_at", { ascending: false })
-    .limit(3);
-
-  const fallbackProjects = [
-    {
-      id: "fallback-1",
-      slug: "mobile-app-1",
-      title: "Adipisicing exercita",
-      summary: "Distinctio Molestia",
-      result: "Voluptatibus sed nem",
-      category: "Mobile",
-      image_url: "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1000&auto=format&fit=crop", // Elephant image to match screenshot
-      gradient: "linear-gradient(to bottom right, #a855f7, #ec4899)",
-      link: "#",
-      show_on_home: true,
-      created_at: new Date().toISOString(),
-      client: "Softzeniq",
-      tags: ["Mobile", "Design"]
-    },
-    {
-      id: "fallback-2",
-      slug: "saas-app-1",
-      title: "In repudiandae animals",
-      summary: "Qui ex ullam omnis a",
-      result: "Reprehenderit cumque",
-      category: "SaaS",
-      image_url: "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1000&auto=format&fit=crop",
-      gradient: "linear-gradient(to bottom right, #3b82f6, #8b5cf6)",
-      link: "#",
-      show_on_home: true,
-      created_at: new Date().toISOString(),
-      client: "Softzeniq",
-      tags: ["SaaS", "Web"]
-    },
-    {
-      id: "fallback-3",
-      slug: "ecommerce-1",
-      title: "Sit illo magnam mole",
-      summary: "Ut ratione beatae eu",
-      result: "Dignissimos maxime e",
-      category: "E-commerce",
-      image_url: "https://images.unsplash.com/photo-1542393545-10f5cde2c810?q=80&w=1000&auto=format&fit=crop",
-      gradient: "linear-gradient(to right, #ec4899, #f43f5e)",
-      link: "#",
-      show_on_home: true,
-      created_at: new Date().toISOString(),
-      client: "Softzeniq",
-      tags: ["E-commerce", "Shopify"]
-    }
-  ];
-
-  const displayProjects = projectsData && projectsData.length > 0 ? projectsData : fallbackProjects;
+  const supabase = await createClient();
+  const { data: projects } = await supabase.from("projects").select("*").eq("status", "published").order("display_order", { ascending: true }).limit(3);
 
   return (
     <div>
@@ -97,7 +43,7 @@ export default async function Portfolio() {
             }
           />
           <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
-            {displayProjects.map((p, i) => {
+            {projects?.map((p, i) => {
               const InnerContent = (
                 <>
                   <div

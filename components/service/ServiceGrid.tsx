@@ -1,19 +1,23 @@
 import { Reveal } from "@/components/shared/Revel";
 import { Button } from "@/components/ui/button";
-import { services } from "@/data/Service";
+import { createClient } from "@/utils/supabase/server";
+import { DynamicIcon } from "@/components/shared/DynamicIcon";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 
-export default function ServiceGrid() {
+export default async function ServiceGrid() {
+  const supabase = await createClient();
+  const { data: services } = await supabase.from("services").select("*").eq("status", "published").order("display_order", { ascending: true });
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {services.map((service, index) => (
+        {services?.map((service, index) => (
           <Reveal key={service.slug} delay={index * 0.04}>
             <div className="group relative h-full rounded-2xl glass p-7 hover:border-primary/40 transition-colors overflow-hidden flex flex-col">
               <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-brand opacity-0 group-hover:opacity-20 blur-3xl transition-opacity" />
               <div className="h-12 w-12 rounded-xl bg-gradient-brand grid place-items-center shadow-glow mb-5">
-                <service.icon className="h-5 w-5 text-primary-foreground" />
+                <DynamicIcon name={service.icon_name} className="h-5 w-5 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">{service.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">

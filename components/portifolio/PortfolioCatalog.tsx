@@ -1,5 +1,6 @@
 "use client";
 
+
 import { Project } from "@/data/Project";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -7,10 +8,6 @@ import PortfolioModal from "./PortfolioModal";
 
 const categories = ["All", "Web", "SaaS", "E-commerce", "Mobile"] as const;
 type Cat = (typeof categories)[number];
-
-interface PortfolioCatalogProps {
-  projects: Project[];
-}
 
 function getGradientStyle(gradient: string) {
   // Use safe HEX colors that work in all browsers
@@ -32,9 +29,9 @@ function getGradientStyle(gradient: string) {
   return gradient;
 }
 
-export default function PortfolioCatalog({ projects }: PortfolioCatalogProps) {
+export default function PortfolioCatalog({ projects }: { projects: any[] }) {
   const [active, setActive] = useState<Cat>("All");
-  const [open, setOpen] = useState<Project | null>(null);
+  const [open, setOpen] = useState<any | null>(null);
 
   const fallbackProjects: Project[] = [
     {
