@@ -1,7 +1,7 @@
+import { DynamicIcon } from "@/components/shared/DynamicIcon";
 import { Reveal } from "@/components/shared/Revel";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
-import { DynamicIcon } from "@/components/shared/DynamicIcon";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ export default async function ServiceGrid() {
                 {service.description}
               </p>
               <ul className="mt-5 space-y-2">
-                {service.benefits.map((benefit) => (
+                {service.benefits.map((benefit:any) => (
                   <li key={benefit} className="flex gap-2 text-sm">
                     <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                     <span>{benefit}</span>
