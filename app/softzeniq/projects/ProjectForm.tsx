@@ -7,9 +7,10 @@ import { useRef, useState } from "react";
 interface ProjectFormProps {
   initialData?: Project;
   onClose?: () => void;
+  categories: any[];
 }
 
-export default function ProjectForm({ initialData, onClose }: ProjectFormProps) {
+export default function ProjectForm({ initialData, onClose, categories }: ProjectFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
 
@@ -46,11 +47,11 @@ export default function ProjectForm({ initialData, onClose }: ProjectFormProps) 
 
       <div>
         <label className="block text-sm font-medium mb-1">Category</label>
-        <select name="category" required defaultValue={initialData?.category || "Web"} className="w-full bg-background border rounded-lg px-3 py-2">
-          <option value="Web">Web</option>
-          <option value="SaaS">SaaS</option>
-          <option value="E-commerce">E-commerce</option>
-          <option value="Mobile">Mobile</option>
+        <select name="category" required defaultValue={initialData?.category || (categories.length > 0 ? categories[0].name : "Web")} className="w-full bg-background border rounded-lg px-3 py-2">
+          {categories.map((cat) => (
+            <option key={cat.id} value={cat.name}>{cat.name}</option>
+          ))}
+          {categories.length === 0 && <option value="Web">Web</option>}
         </select>
       </div>
 
@@ -80,9 +81,15 @@ export default function ProjectForm({ initialData, onClose }: ProjectFormProps) 
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">Preview Image URL (Optional)</label>
+        <label className="block text-sm font-medium mb-1">Preview Image (Upload)</label>
+        <input type="file" name="image" accept="image/*" className="w-full bg-background border rounded-lg px-3 py-2 file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+        <p className="text-xs text-muted-foreground mt-1">Upload an image from your device.</p>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium mb-1">OR Preview Image URL</label>
         <input type="url" name="image_url" defaultValue={initialData?.image_url || ""} className="w-full bg-background border rounded-lg px-3 py-2" placeholder="e.g. https://imgur.com/image.png" />
-        <p className="text-xs text-muted-foreground mt-1">Direct link to an image. Will be shown over the gradient.</p>
+        <p className="text-xs text-muted-foreground mt-1">Direct link to an image (will be used if no file is uploaded above).</p>
       </div>
 
       <div>

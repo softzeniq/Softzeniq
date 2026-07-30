@@ -17,12 +17,13 @@ import { createClient } from "@/utils/supabase/server";
 export default async function page() {
   const supabase = await createClient();
   const { data: projects } = await supabase.from("projects").select("*").order("created_at", { ascending: false });
+  const { data: categories } = await supabase.from("categories").select("*").order("name", { ascending: true });
 
 
   return (
     <div>
       <PortfolioHeader />
-      <PortfolioCatalog projects={projects || []} />
+      <PortfolioCatalog projects={projects || []} categories={categories || []} />
     </div>
   );
 }

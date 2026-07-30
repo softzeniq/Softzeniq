@@ -6,7 +6,7 @@ import ProjectForm from "./ProjectForm";
 import { AnimatePresence, motion } from "framer-motion";
 import { deleteProject } from "@/app/actions/projects";
 
-export default function DashboardView({ projects }: { projects: Project[] | null }) {
+export default function DashboardView({ projects, categories }: { projects: Project[] | null, categories: any[] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
 
@@ -145,7 +145,7 @@ export default function DashboardView({ projects }: { projects: Project[] | null
                 </button>
               </div>
               <div className="p-6">
-                <ProjectForm initialData={editingProject || undefined} onClose={handleCloseModal} />
+                <ProjectForm initialData={editingProject || undefined} onClose={handleCloseModal} categories={categories} />
               </div>
             </motion.div>
           </div>

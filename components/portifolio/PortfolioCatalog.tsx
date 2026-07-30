@@ -6,8 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import PortfolioModal from "./PortfolioModal";
 
-const categories = ["All", "Web", "SaaS", "E-commerce", "Mobile"] as const;
-type Cat = (typeof categories)[number];
 
 function getGradientStyle(gradient: string) {
   // Use safe HEX colors that work in all browsers
@@ -29,9 +27,11 @@ function getGradientStyle(gradient: string) {
   return gradient;
 }
 
-export default function PortfolioCatalog({ projects }: { projects: any[] }) {
-  const [active, setActive] = useState<Cat>("All");
+export default function PortfolioCatalog({ projects, categories }: { projects: any[], categories: any[] }) {
+  const [active, setActive] = useState<string>("All");
   const [open, setOpen] = useState<any | null>(null);
+
+  const categoryNames = ["All", ...categories.map(c => c.name)];
 
   const fallbackProjects: Project[] = [
     {
@@ -90,7 +90,7 @@ export default function PortfolioCatalog({ projects }: { projects: any[] }) {
     <section className="pb-24">
       <div className="max-w-[1536px] mx-auto px-5 sm:px-8 xl:px-12">
         <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((category) => (
+          {categoryNames.map((category) => (
             <button
               key={category}
               onClick={() => setActive(category)}
