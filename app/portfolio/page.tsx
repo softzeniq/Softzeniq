@@ -16,7 +16,7 @@ import { createClient } from "@/utils/supabase/server";
 
 export default async function page() {
   const supabase = await createClient();
-  const { data: projects } = await supabase.from("projects").select("*").eq("status", "published").order("display_order", { ascending: true });
+  const { data: projects } = await supabase.from("projects").select("*").order("created_at", { ascending: false });
 
 
   return (
