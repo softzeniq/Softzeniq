@@ -258,9 +258,14 @@
   }
 } */
 
-html,
+/* html,
 body {
   overflow-x: clip;
+} */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* body {

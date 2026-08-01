@@ -10,9 +10,9 @@ export default async function Portfolio() {
   const { data: projects } = await supabase.from("projects").select("*").eq("show_on_home", true).order("created_at", { ascending: false });
 
   return (
-    <div className="overflow-x-clip">
+    <div className="overflow-x-hidden">
       <section className="relative py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="lg:max-w-7xl md:max-w-3xl sm:max-w-xl max-w-md mx-auto px-5 sm:px-8">
           <PortfolioCarousel projects={projects || []} />
 
           <div className="mt-10 text-center">

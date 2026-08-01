@@ -32,16 +32,17 @@ export default function PortfolioCarousel({ projects }: { projects: any[] }) {
   if (!projects || projects.length === 0) return null;
 
   return (
+    <div className="flex flex-col"> 
     <Carousel
       opts={{
         align: "start",
-        loop: true,
+        loop: false,
         slidesToScroll: 1,
       }}
       className="w-full"
     >
       {/* Section Header — outside the overflow-hidden viewport */}
-      <div className="flex overflow-hidden max-w-screen justify-between gap-4 mb-8 sm:mb-10">
+      <div className="flex overflow-hidden  justify-between gap-4 mb-8 sm:mb-10">
         <div className="min-w-0 overflow-hidden max-w-screen">
           <span className="text-xs font-bold uppercase tracking-widest text-primary">Recent work</span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mt-2">
@@ -77,6 +78,7 @@ export default function PortfolioCarousel({ projects }: { projects: any[] }) {
         ))}
       </CarouselContent>
     </Carousel>
+    </div>
   );
 }
 

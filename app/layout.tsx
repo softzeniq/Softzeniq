@@ -5,9 +5,9 @@ import "./globals.css";
 import Footer from "@/components/shared/Footer";
 import ScrollToTop from "@/components/shared/ScrollToTop";
 import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
+import { supabase } from "@/lib/supabase";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
-import { supabase } from "@/lib/supabase";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -113,7 +113,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} `}>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         <Navbar customLogoUrl={settings?.header_logo} />
 
         <Script id="facebook-pixel" strategy="afterInteractive">
