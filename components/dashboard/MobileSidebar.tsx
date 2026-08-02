@@ -53,6 +53,8 @@ export function MobileSidebar() {
             {[
               { href: "/softzeniq", icon: LayoutDashboard, label: "Overview" },
               { href: "/softzeniq/projects", icon: FolderKanban, label: "Projects" },
+              { href: "/softzeniq/services", icon: FolderKanban, label: "Services" },
+              { href: "/softzeniq/categories", icon: FolderKanban, label: "Categories" },
               { href: "/softzeniq/testimonials", icon: Users, label: "Testimonials" },
               { href: "/softzeniq/pricing", icon: BarChart3, label: "Pricing" },
               { href: "/softzeniq/stats", icon: BarChart3, label: "Stats (Hero)" },
