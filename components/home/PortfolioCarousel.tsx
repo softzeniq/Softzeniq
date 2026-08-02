@@ -36,7 +36,7 @@ export default function PortfolioCarousel({ projects }: { projects: any[] }) {
     <Carousel
       opts={{
         align: "start",
-        loop: false,
+        loop: true,
         slidesToScroll: 1,
       }}
       className="w-full"
