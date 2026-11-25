@@ -22,8 +22,7 @@ export default function Footer({ customLogoUrl }: { customLogoUrl?: string | nul
 
   return (
     <footer className="relative border-t border-border bg-secondary mt-16">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-6 sm:py-16 grid gap-6 md:gap-12 grid-cols-2 lg:grid-cols-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-8 sm:py-16 grid gap-6 md:gap-12 grid-cols-2 lg:grid-cols-6">
         {/* Brand */}
         <div className="col-span-2 space-y-4">
           {customLogoUrl ? (
@@ -41,40 +40,40 @@ export default function Footer({ customLogoUrl }: { customLogoUrl?: string | nul
             businesses worldwide — from web and mobile to custom software and
             growth.
           </p>
-          <div className="flex gap-3 pt-2">
+          <div className="flex gap-2.5 pt-2">
             <a
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
-              className="h-9 w-9 grid place-items-center rounded-lg glass hover:bg-primary/10 transition-colors"
+              className="h-9 w-9 grid place-items-center rounded-lg bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
             >
-              <FaXTwitter className="h-4 w-4 text-primary" />
+              <FaXTwitter className="h-4 w-4" />
             </a>
             <a
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="h-9 w-9 grid place-items-center rounded-lg glass hover:bg-primary/10 transition-colors"
+              className="h-9 w-9 grid place-items-center rounded-lg bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
             >
-              <FaLinkedinIn className="h-4 w-4 text-primary" />
+              <FaLinkedinIn className="h-4 w-4" />
             </a>
             <a
               href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="h-9 w-9 grid place-items-center rounded-lg glass hover:bg-primary/10 transition-colors"
+              className="h-9 w-9 grid place-items-center rounded-lg bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
             >
-              <FaGithub className="h-4 w-4 text-primary" />
+              <FaGithub className="h-4 w-4" />
             </a>
             <a
               href="mailto:hello@softzeniq.com"
               aria-label="Email SoftZeniq"
-              className="h-9 w-9 grid place-items-center rounded-lg glass hover:bg-primary/10 transition-colors"
+              className="h-9 w-9 grid place-items-center rounded-lg bg-card border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
             >
-              <Mail className="h-4 w-4 text-primary" />
+              <Mail className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -133,7 +132,7 @@ export default function Footer({ customLogoUrl }: { customLogoUrl?: string | nul
             straight to your inbox.
           </p>
           <form onSubmit={handleSubscribe} className="space-y-2">
-            <div className="flex overflow-hidden rounded-xl border border-border bg-background focus-within:ring-1 focus-within:ring-indigo-500/50 focus-within:border-indigo-500 transition-all">
+            <div className="flex overflow-hidden rounded-xl border border-border bg-background focus-within:ring-1 focus-within:ring-primary/40 focus-within:border-primary transition-[border-color,box-shadow]">
               <input
                 type="email"
                 value={email}
@@ -144,7 +143,7 @@ export default function Footer({ customLogoUrl }: { customLogoUrl?: string | nul
               />
               <button
                 type="submit"
-                className="px-6 bg-brand-indigo hover:bg-brand-indigo/90 text-white transition flex items-center justify-center cursor-pointer"
+                className="px-5 bg-primary hover:bg-primary/90 text-primary-foreground transition-colors flex items-center justify-center cursor-pointer"
                 aria-label="Subscribe"
               >
                 {subscribed ? (

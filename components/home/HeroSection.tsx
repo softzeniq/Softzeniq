@@ -11,31 +11,30 @@ import { Button } from "../ui/button";
 export default function HeroSection() {
   return (
     <CircuitBoard>
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-20 pb-10 text-center relative z-20 ">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-24 pb-12 sm:pt-28 sm:pb-14 text-center relative z-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-muted-foreground mb-6 "
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-flex items-center gap-2 rounded-full bg-card border border-border shadow-xs px-3.5 py-1.5 text-xs font-medium text-muted-foreground mb-6"
         >
-          {" "}
-          <span className="h-1.5 w-1.5 rounded-full bg-gradient-brand" />
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
           Global IT Solutions Partner
         </motion.div>
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.05 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]"
+          transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          className="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight leading-[1.06] text-foreground"
         >
-          Build. Scale. <span className="text-gradient">Transform</span>
+          Build. Scale. <span className="text-primary">Transform</span>
           <br className="hidden sm:block" /> with SoftZeniq.
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground"
+          transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed"
         >
           IT solutions, software and digital growth for startups and businesses
           worldwide. One senior team, end-to-end — from idea to launch to scale.

@@ -32,30 +32,28 @@ export default function WhyChosseUs() {
     },
   ];
   return (
-    <section className="py-12 sm:py-16 border-b border-color-border bg-[var(--color-secondary)]/50  text-center w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 border-b border-border bg-secondary/50 text-center w-full">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <SectionHeading
           eyebrow="Growth Economics"
           title={
             <>
               E-Commerce Growth:{" "}
-              <span className="text-gradient"> Legacy vs. Owned Scale</span>.
+              <span className="text-primary">Legacy vs. Owned Scale</span>.
             </>
           }
-          description=" Relying entirely on standard template scripts or restricted social
-          platform checkouts limits your branding authority and sales volume.
-          Here is how upgrading elevates your revenue."
+          description="Relying entirely on standard template scripts or restricted social platform checkouts limits your branding authority and sales volume. Here is how upgrading elevates your revenue."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-14">
           {/* Without Card */}
-          <div className="bg-card  border border-border rounded-3xl p-8 text-left shadow-xs">
+          <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 text-left shadow-xs">
             <div className="flex items-center space-x-3 mb-6">
               <div className="p-2.5 bg-destructive/10 text-destructive rounded-xl">
-                <EyeOff className="w-5.5 h-5.5" />
+                <EyeOff className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-color-foregroundfont-display">
+                <h4 className="text-lg font-semibold text-foreground font-display">
                   Legacy, Broken Setup
                 </h4>
                 <p className="text-xs text-muted-foreground">
@@ -66,11 +64,11 @@ export default function WhyChosseUs() {
 
             <div className="space-y-4">
               {comparisonData.map((item) => (
-                <div key={item.title} className="border-b border-border pb-3.5">
-                  <h5 className="text-xs font-semibold text-color-foreground font-sans mb-1">
+                <div key={item.title} className="border-b border-border last:border-b-0 pb-3.5 last:pb-0">
+                  <h5 className="text-sm font-medium text-foreground font-sans mb-1">
                     {item.title}
                   </h5>
-                  <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
                     {item.without}
                   </p>
                 </div>
@@ -79,20 +77,20 @@ export default function WhyChosseUs() {
           </div>
 
           {/* With Card */}
-          <div className="bg-linear-to-b from-brand-indigo/20 to-color-background border-2 border-[var(--brand-indigo)] rounded-3xl p-8 text-left shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 text-[10px] font-bold font-mono tracking-wider py-1 px-4 rounded-bl-xl uppercase bg-brand-indigo text-primary-foreground">
+          <div className="bg-card border border-primary/40 rounded-2xl p-6 sm:p-8 text-left shadow-md relative overflow-hidden">
+            <div className="absolute top-0 right-0 text-[11px] font-medium py-1 px-3.5 rounded-bl-xl bg-primary text-primary-foreground">
               Optimized Engine
             </div>
 
             <div className="flex items-center space-x-3 mb-6">
-              <div className="p-2.5 bg-brand-blue/15 rounded-xl text-brand-blue">
-                <Zap className="w-5.5 h-5.5" />
+              <div className="p-2.5 bg-primary/10 rounded-xl text-primary">
+                <Zap className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-lg font-bold text-color-foreground font-display">
+                <h4 className="text-lg font-semibold text-foreground font-display">
                   Softzeniq Custom Blueprint
                 </h4>
-                <p className="text-xs font-medium font-sans text-brand-blue">
+                <p className="text-xs font-medium font-sans text-primary">
                   High-converting asset designed for exponential scale
                 </p>
               </div>
@@ -102,16 +100,16 @@ export default function WhyChosseUs() {
               {comparisonData.map((item) => (
                 <div
                   key={item.title}
-                  className="border-b border-border  pb-3.5 flex items-start space-x-3"
+                  className="border-b border-border last:border-b-0 pb-3.5 last:pb-0 flex items-start space-x-3"
                 >
-                  <div className="p-1.5 rounded-lg mt-0.5 bg-[var(--accent)]/10 text-[var(--accent)]">
+                  <div className="p-1.5 rounded-lg mt-0.5 bg-primary/10 text-primary shrink-0">
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h5 className="text-xs font-bold text-color-foreground font-sans">
+                    <h5 className="text-sm font-medium text-foreground font-sans">
                       {item.title}
                     </h5>
-                    <p className="text-xs text-muted-foreground leading-relaxed font-sans mt-0.5">
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans mt-0.5">
                       {item.with}
                     </p>
                   </div>

@@ -17,7 +17,7 @@ export default async function Service() {
             eyebrow="What we do"
             title={
               <>
-                A full-stack <span className="text-gradient">product team</span>
+                A full-stack <span className="text-primary">product team</span>
                 , on demand.
               </>
             }
@@ -28,17 +28,16 @@ export default async function Service() {
               <Reveal key={s.slug} delay={i * 0.04}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="group relative block h-full rounded-2xl p-6 glass hover:border-primary/40 transition-colors overflow-hidden"
+                  className="group relative block h-full rounded-2xl p-6 bg-card border border-border shadow-xs hover:border-primary/40 hover:shadow-md transition-[border-color,box-shadow] duration-200 overflow-hidden"
                 >
-                  <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-gradient-brand opacity-0 group-hover:opacity-20 blur-3xl transition-opacity" />
-                  <div className="h-11 w-11 rounded-xl bg-gradient-brand grid place-items-center shadow-glow mb-5">
-                    <DynamicIcon name={s.icon_name} className="h-5 w-5 text-primary-foreground" />
+                  <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary grid place-items-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200">
+                    <DynamicIcon name={s.icon_name} className="h-5 w-5" />
                   </div>
-                  <h3 className="text-lg font-semibold">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-2">
+                  <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                     {s.short_description}
                   </p>
-                  <div className="mt-5 inline-flex items-center text-sm text-primary font-medium gap-1 group-hover:gap-2 transition-all">
+                  <div className="mt-5 inline-flex items-center text-sm text-primary font-medium gap-1.5 group-hover:gap-2.5 transition-[gap] duration-200">
                     Learn more <ArrowRight className="h-3.5 w-3.5" />
                   </div>
                 </Link>

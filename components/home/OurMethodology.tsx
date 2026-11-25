@@ -48,41 +48,38 @@ export default function OurMethodology() {
     },
   ];
   return (
-    <section className="pt-12 sm:pt-16 bg-background text-foreground text-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 bg-background text-foreground text-center w-full">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <SectionHeading
           eyebrow="Our Methodology"
           title={
             <>
               Structured Sprints to{" "}
-              <span className="text-gradient"> DTC Dominance</span>.
+              <span className="text-primary">DTC Dominance</span>.
             </>
           }
           description="We operate through 6 highly structured, transparent phases that optimize layouts and eliminate checkout friction systemically."
         />
 
-        <div className="relative mt-20 mx-auto">
-          <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-border -translate-y-1/2 z-0 hidden lg:block"></div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10 text-left">
-            {processSteps.map((step, idx) => (
+        <div className="mt-14 mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left">
+            {processSteps.map((step) => (
               <div
                 key={step.step}
-                className="bg-card border border-border rounded-2xl p-5 relative hover:border-primary transition hover:-translate-y-1 duration-300"
+                className="bg-card border border-border rounded-2xl p-6 shadow-xs hover:border-primary/40 hover:shadow-md transition-[border-color,box-shadow] duration-200"
               >
                 <div className="flex justify-between items-center mb-5 font-mono">
-                  <span className="text-2xl font-black text-primary leading-none">
+                  <span className="text-xl font-semibold tabular-nums text-primary leading-none">
                     {step.step}
                   </span>
-                  <div className="p-1.5 bg-gradient-brand text-primary rounded-md grid place-items-center shadow-glow ">
-                    {/* <IconRenderer name={step.icon} className="w-4 h-4" /> */}
-                    <step.icon className="h-5 w-5 text-primary-foreground" />
+                  <div className="h-10 w-10 bg-primary/10 text-primary rounded-xl grid place-items-center">
+                    <step.icon className="h-5 w-5" />
                   </div>
                 </div>
-                <h4 className="text-sm font-bold text-foreground font-display mb-2">
+                <h4 className="text-base font-semibold text-foreground font-display mb-2">
                   {step.title}
                 </h4>
-                <p className="text-[11px] text-muted-foreground leading-relaxed font-sans">
+                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
                   {step.desc}
                 </p>
               </div>

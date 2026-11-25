@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 function getGradientStyle(gradient: string) {
-  const fallback = "linear-gradient(135deg, #4f46e5, #ec4899)";
+  const fallback = "linear-gradient(135deg, #e2e8f0, #f1f5f9)";
   if (!gradient) return fallback;
 
   if (gradient.startsWith("from-[")) {
@@ -42,18 +42,21 @@ export default function PortfolioCarousel({ projects }: { projects: any[] }) {
       className="w-full"
     >
       {/* Section Header — outside the overflow-hidden viewport */}
-      <div className="flex overflow-hidden  justify-between gap-4 mb-8 sm:mb-10">
+      <div className="flex overflow-hidden justify-between items-end gap-4 mb-8 sm:mb-10">
         <div className="min-w-0 overflow-hidden max-w-screen">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Recent work</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mt-2">
-            Products our clients <span className="text-gradient">are proud of.</span>
+          <span className="inline-flex items-center gap-2 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            Recent work
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-foreground mt-3">
+            Products our clients <span className="text-primary">are proud of.</span>
           </h2>
         </div>
 
         {projects.length > 1 && (
           <div className="flex items-center gap-2 shrink-0">
-            <CarouselPrevious className="static !translate-x-0 !translate-y-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white hover:bg-primary hover:text-white border border-zinc-200 shadow-sm transition-all" />
-            <CarouselNext className="static !translate-x-0 !translate-y-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white hover:bg-primary hover:text-white border border-zinc-200 shadow-sm transition-all" />
+            <CarouselPrevious className="static !translate-x-0 !translate-y-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-card hover:bg-primary hover:text-primary-foreground border border-border shadow-xs transition-colors duration-150" />
+            <CarouselNext className="static !translate-x-0 !translate-y-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-card hover:bg-primary hover:text-primary-foreground border border-border shadow-xs transition-colors duration-150" />
           </div>
         )}
       </div>
@@ -84,18 +87,18 @@ export default function PortfolioCarousel({ projects }: { projects: any[] }) {
 
 function ProjectCard({ project: p }: { project: any }) {
   return (
-    <div className="group relative flex flex-col h-full rounded-2xl sm:rounded-3xl bg-white border border-zinc-200/80 shadow-md hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden hover:-translate-y-1">
+    <div className="group relative flex flex-col h-full rounded-2xl bg-card border border-border shadow-xs hover:shadow-md hover:border-primary/40 transition-[border-color,box-shadow] duration-200 overflow-hidden">
       {/* Framed Image */}
-      <div className="p-2 sm:p-2.5 pb-0 shrink-0">
+      <div className="p-2.5 pb-0 shrink-0">
         <div
-          className="relative aspect-[16/10] overflow-hidden rounded-xl sm:rounded-2xl w-full bg-zinc-100"
+          className="relative aspect-[16/20] overflow-hidden rounded-xl w-full bg-secondary"
           style={{ background: getGradientStyle(p.gradient) }}
         >
           {p.image_url && (
             <img
               src={p.image_url}
               alt={p.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               loading="lazy"
             />
           )}
@@ -103,7 +106,7 @@ function ProjectCard({ project: p }: { project: any }) {
           {/* Category Badge */}
           {p.category && (
             <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-10">
-              <span className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] sm:text-xs font-bold text-zinc-900 shadow-sm border border-white/20">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-card/95 backdrop-blur-sm text-xs font-medium text-foreground shadow-xs border border-border">
                 {p.category}
               </span>
             </div>
@@ -112,26 +115,16 @@ function ProjectCard({ project: p }: { project: any }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 p-3.5 sm:p-5 lg:p-6">
-        <h3 className="font-bold text-sm sm:text-lg lg:text-xl tracking-tight text-zinc-900 group-hover:text-primary transition-colors duration-300 line-clamp-2 mb-1 sm:mb-2">
+      <div className="flex flex-col flex-1 p-4 sm:p-5">
+        <h3 className="font-semibold text-base sm:text-lg tracking-tight text-foreground group-hover:text-primary transition-colors duration-150 line-clamp-2 mb-2">
           {p.title}
         </h3>
 
-        {p.client && (
-          <p className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest font-bold mb-2 sm:mb-3">
-            Client: {p.client}
-          </p>
-        )}
-
-        <p className="text-[11px] sm:text-sm text-zinc-600 line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-5 flex-1 leading-relaxed">
-          {p.summary}
-        </p>
-
         {/* Tags */}
         {p.tags && p.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-3 sm:mb-5">
+          <div className="flex flex-wrap gap-1.5 mb-4">
             {p.tags.slice(0, 3).map((tag: string) => (
-              <span key={tag} className="text-[9px] sm:text-[11px] font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-zinc-100 text-zinc-600 border border-zinc-200/60">
+              <span key={tag} className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-secondary text-muted-foreground border border-border">
                 {tag}
               </span>
             ))}
@@ -139,12 +132,12 @@ function ProjectCard({ project: p }: { project: any }) {
         )}
 
         {/* Footer */}
-        <div className="mt-auto pt-3 flex items-center justify-between border-t border-zinc-100">
-          <span className="text-[11px] sm:text-sm font-bold text-primary truncate pr-2">
-            {p.result || "View Project"}
+        <div className="mt-auto pt-3 flex items-center justify-between border-t border-border">
+          <span className="text-xs sm:text-sm font-medium text-primary truncate pr-2">
+            Client: {p.result || "View Project"}
           </span>
-          <span className="flex items-center justify-center w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-zinc-50 group-hover:bg-primary group-hover:text-white text-zinc-400 transition-all duration-300 shrink-0 border border-zinc-200 group-hover:border-primary">
-            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-0.5 transition-transform duration-300" />
+          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary group-hover:bg-primary group-hover:text-primary-foreground text-muted-foreground transition-colors duration-150 shrink-0 border border-border group-hover:border-primary">
+            <ArrowRight className="h-3.5 w-3.5" />
           </span>
         </div>
       </div>

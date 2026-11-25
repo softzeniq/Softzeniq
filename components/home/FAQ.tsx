@@ -58,42 +58,42 @@ export default function FAQ() {
     },
   ];
   return (
-    <div className="flex flex-col items-center text-center bg-[var(--color-secondary)]/50 text-foreground px-3 py-12 sm:py-16 w-full">
+    <div className="flex flex-col items-center text-center bg-secondary/50 text-foreground px-3 py-12 sm:py-16 w-full">
       <SectionHeading
         eyebrow="FAQ"
         title={
           <>
-            Frequently Asked <span className="text-gradient"> Questions</span>.
+            Frequently Asked <span className="text-primary">Questions</span>.
           </>
         }
-        description=" Proactively answering FAQs boosts user confidence and cuts down on support tickets."
+        description="Proactively answering FAQs boosts user confidence and cuts down on support tickets."
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  w-full mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start text-left">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start text-left">
         {faqsData.map((faq, index) => (
           <div
             key={index}
-            className="flex flex-col items-start w-full bg-gradient-to-r from-brand-blue/15 to-white"
+            className="flex flex-col items-start w-full bg-card border border-border rounded-xl overflow-hidden shadow-xs hover:border-foreground/20 transition-colors duration-150"
           >
             <button
               type="button"
               aria-expanded={openIndex === index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="flex items-center justify-between w-full cursor-pointer bg-card/70 border border-border p-4 rounded text-foreground"
+              className="flex items-center justify-between gap-4 w-full cursor-pointer p-4 text-left text-foreground"
             >
-              <h3 className="text-sm text-foreground">{faq.question}</h3>
+              <h3 className="text-sm font-medium text-foreground">{faq.question}</h3>
               <ChevronDown
-                className={`${openIndex === index ? "rotate-180" : ""} transition-transform duration-300 text-primary`}
+                className={`${openIndex === index ? "rotate-180" : ""} transition-transform duration-200 text-muted-foreground shrink-0`}
                 size={18}
                 aria-hidden="true"
               />
             </button>
 
             <p
-              className={`text-sm text-foreground/80 px-4 transition-all duration-300 ease-in-out overflow-hidden ${
+              className={`text-sm text-muted-foreground px-4 transition-[max-height,opacity] duration-200 ease-out overflow-hidden leading-relaxed ${
                 openIndex === index
-                  ? "opacity-100 max-h-[300px] translate-y-0 pt-4"
-                  : "opacity-0 max-h-0 -translate-y-2"
+                  ? "opacity-100 max-h-[300px] pb-4"
+                  : "opacity-0 max-h-0"
               }`}
             >
               {faq.answer}

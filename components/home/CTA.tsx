@@ -7,12 +7,12 @@ export default function CTA() {
   return (
     <div>
       {" "}
-      <section className="relative py-12 sm:py-16">
-        <div className="max-w-[1536px] mx-auto px-5 sm:px-8 xl:px-12">
+      <section className="relative py-12 sm:py-16 w-full">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <Reveal>
-            <div className="relative rounded-[2rem] overflow-hidden p-10 sm:p-16 text-center bg-gradient-brand shadow-glow">
-              <div className="absolute inset-0 grid-bg opacity-20" />
-              <h2 className="relative text-3xl sm:text-5xl font-bold tracking-tight text-primary-foreground">
+            <div className="relative rounded-3xl overflow-hidden p-10 sm:p-16 text-center bg-primary shadow-md">
+              <div className="absolute inset-0 grid-bg opacity-15" />
+              <h2 className="relative text-3xl sm:text-5xl font-semibold tracking-tight text-primary-foreground">
                 Ready to build something remarkable?
               </h2>
               <p className="relative mt-4 text-primary-foreground/80 max-w-lg mx-auto">

@@ -18,15 +18,15 @@ export default async function Stats() {
   const stats = statsData && statsData.length > 0 ? statsData : defaultStats;
 
   return (
-    <div className="container mx-auto px-5 sm:px-8 mt-10 lg:mt-20 relative z-20">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
+    <div className="max-w-7xl w-full mx-auto px-5 sm:px-8 mt-10 lg:mt-16 relative z-20">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.05}>
-            <div className="glass rounded-2xl p-3 lg:p-6 w-[130px] sm:w-[150px] lg:w-[200px] xl:w-[280px] flex flex-col justify-center items-center text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient">
+            <div className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col justify-center items-center text-center h-full">
+              <div className="text-3xl sm:text-4xl font-semibold tabular-nums tracking-tight text-foreground">
                 {s.value}
               </div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-1">
+              <div className="text-xs sm:text-sm text-muted-foreground mt-1.5">
                 {s.label}
               </div>
             </div>
