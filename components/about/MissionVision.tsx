@@ -20,12 +20,12 @@ export default function MissionVision() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-6">
         {blocks.map((block, index) => (
           <Reveal key={block.title} delay={index * 0.05}>
-            <div className="glass rounded-2xl p-8 h-full">
-              <div className="h-12 w-12 rounded-xl bg-gradient-brand grid place-items-center shadow-glow mb-5">
-                <block.icon className="h-5 w-5 text-primary-foreground" />
+            <div className="bg-card border border-border shadow-xs rounded-2xl p-8 h-full">
+              <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary grid place-items-center mb-5">
+                <block.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-2xl font-bold">{block.title}</h3>
-              <p className="mt-3 text-muted-foreground">{block.text}</p>
+              <h3 className="text-2xl font-semibold text-foreground">{block.title}</h3>
+              <p className="mt-3 text-muted-foreground leading-relaxed">{block.text}</p>
             </div>
           </Reveal>
         ))}

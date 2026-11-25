@@ -13,9 +13,9 @@ export default function AboutHero() {
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             About SoftZeniq
           </span> */}
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-foreground">
             We build software for{" "}
-            <span className="text-gradient">
+            <span className="text-primary">
               founders who refuse to compromise
             </span>
             .

@@ -1,5 +1,6 @@
 import Contact from "@/components/contact/Contact";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Start Your Project | Contact Us",
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div>
+    <Suspense fallback={<div className="min-h-screen" />}>
       <Contact />
-    </div>
+    </Suspense>
   );
 }
 

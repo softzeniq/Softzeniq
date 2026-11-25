@@ -17,11 +17,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "",
+    slug: "dream-vision",
     title: "Dream Vision",
     category: "Web",
     client: "Dream Vision",
-    summary: "medical equipment ",
+    summary: "Digital commerce and catalog platform for medical equipment.",
     result: "+312% trial-to-paid conversion",
     tags: ["Next.js", "Typescript", "Supabase","TailwindCss"],
     gradient: "from-[oklch(0.6_0.22_250)] to-[oklch(0.55_0.24_290)]",

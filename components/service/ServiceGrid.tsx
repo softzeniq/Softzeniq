@@ -30,9 +30,14 @@ export default async function ServiceGrid() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 pt-6 border-t border-border/50">
-                <Button asChild variant="glass" size="sm" className="w-full">
-                  <Link href="/contact">
+              <div className="mt-auto pt-6 border-t border-border flex items-center gap-2">
+                <Button asChild variant="glass" size="sm" className="flex-1">
+                  <Link href={`/services/${service.slug}`}>
+                    View Details
+                  </Link>
+                </Button>
+                <Button asChild variant="hero" size="sm" className="flex-1">
+                  <Link href={`/contact?service=${encodeURIComponent(service.title)}`}>
                     Start Project <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </Button>
