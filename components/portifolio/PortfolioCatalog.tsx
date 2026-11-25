@@ -94,10 +94,10 @@ export default function PortfolioCatalog({ projects, categories }: { projects: a
             <button
               key={category}
               onClick={() => setActive(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-150 ${
                 active === category
-                  ? "bg-gradient-brand text-primary-foreground shadow-glow"
-                  : "glass text-muted-foreground hover:text-foreground"
+                  ? "bg-primary text-primary-foreground shadow-xs"
+                  : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-foreground/20"
               }`}
             >
               {category}
@@ -132,7 +132,7 @@ export default function PortfolioCatalog({ projects, categories }: { projects: a
                     <p className="text-sm text-muted-foreground mt-1">
                       {project.summary}
                     </p>
-                    <p className="mt-3 text-sm font-medium text-gradient">
+                    <p className="mt-3 text-sm font-medium text-primary">
                       {project.result}
                     </p>
                   </div>

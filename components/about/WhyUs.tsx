@@ -34,15 +34,15 @@ export default function WhyUs() {
           title={
             <>
               Senior team. Senior{" "}
-              <span className="text-gradient">outcomes</span>.
+              <span className="text-primary">outcomes</span>.
             </>
           }
         />
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {reasons.map((reason, index) => (
             <Reveal key={reason.title} delay={index * 0.05}>
-              <div className="glass rounded-2xl p-6 h-full">
-                <reason.icon className="h-6 w-6 text-brand-indigo mb-4" />
+              <div className="bg-card border border-border shadow-xs rounded-2xl p-6 h-full">
+                <reason.icon className="h-6 w-6 text-primary mb-4" />
                 <h4 className="font-semibold">{reason.title}</h4>
                 <p className="text-sm text-muted-foreground mt-2">
                   {reason.text}

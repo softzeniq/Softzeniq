@@ -24,7 +24,7 @@ export default async function PricingSection() {
           eyebrow="Engagements"
           title={
             <>
-              Simple, <span className="text-gradient">transparent</span> pricing
+              Simple, <span className="text-primary">transparent</span> pricing
             </>
           }
           description="Three ways to work with us. No hidden fees, no long lock-ins."
@@ -33,7 +33,7 @@ export default async function PricingSection() {
           {tiers.map((tier, index) => (
             <Reveal key={tier.name} delay={index * 0.05}>
               <div
-                className={`relative h-full rounded-2xl p-7 flex flex-col ${tier.highlight ? "bg-gradient-brand shadow-glow text-primary-foreground" : "glass"}`}
+                className={`relative h-full rounded-2xl p-7 flex flex-col ${tier.highlight ? "bg-primary shadow-md text-primary-foreground" : "bg-card border border-border shadow-xs"}`}
               >
                 {tier.highlight && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-background px-3 py-1 text-xs font-medium text-foreground border border-border">

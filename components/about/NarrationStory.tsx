@@ -54,7 +54,7 @@ export default function NarrationStory() {
                   key={idx}
                   className="flex items-start text-sm text-muted-foreground leading-relaxed font-sans"
                 >
-                  <span className="p-1 bg-brand-indigo/10 text-brand-indigo rounded-lg mr-2 shrink-0">
+                  <span className="p-1 bg-primary/10 text-primary rounded-lg mr-2 shrink-0">
                     <Check className="w-3.5 h-3.5" />
                   </span>
                   <span>{text}</span>

@@ -17,10 +17,9 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-gradient-brand grid place-items-center shadow-glow hover:scale-110 transition-transform"
+      className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-primary grid place-items-center shadow-md hover:bg-primary/90 active:scale-[0.96] transition-[background-color,transform] duration-150"
     >
       <MessageCircle className="h-6 w-6 text-primary-foreground" />
-      <span className="absolute inset-0 rounded-full animate-ping bg-primary/30" />
     </motion.a>
   );
 }

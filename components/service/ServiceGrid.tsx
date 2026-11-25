@@ -14,10 +14,9 @@ export default async function ServiceGrid() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {services?.map((service, index) => (
           <Reveal key={service.slug} delay={index * 0.04}>
-            <div className="group relative h-full rounded-2xl glass p-7 hover:border-primary/40 transition-colors overflow-hidden flex flex-col">
-              <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-brand opacity-0 group-hover:opacity-20 blur-3xl transition-opacity" />
-              <div className="h-12 w-12 rounded-xl bg-gradient-brand grid place-items-center shadow-glow mb-5">
-                <DynamicIcon name={service.icon_name} className="h-5 w-5 text-primary-foreground" />
+            <div className="group relative h-full rounded-2xl bg-card border border-border shadow-xs p-7 hover:border-primary/40 hover:shadow-md transition-[border-color,box-shadow] duration-200 overflow-hidden flex flex-col">
+              <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary grid place-items-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200">
+                <DynamicIcon name={service.icon_name} className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-semibold">{service.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">

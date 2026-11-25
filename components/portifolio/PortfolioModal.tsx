@@ -45,9 +45,9 @@ export default function PortfolioModal({
                 {open.title}
               </h3>
               <p className="mt-3 text-muted-foreground">{open.summary}</p>
-              <div className="mt-5 rounded-xl bg-gradient-brand/20 border border-primary/20 p-4">
+              <div className="mt-5 rounded-xl bg-primary/10 border border-primary/20 p-4">
                 <div className="text-xs text-muted-foreground">Outcome</div>
-                <div className="text-lg font-semibold text-gradient">
+                <div className="text-lg font-semibold text-primary">
                   {open.result}
                 </div>
               </div>
