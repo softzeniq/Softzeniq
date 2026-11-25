@@ -4,45 +4,43 @@ import { SectionHeading } from "../shared/SectionHeading";
 export default function WhyChosseUs() {
   const comparisonData = [
     {
-      title: "Trust & Authenticity",
+      title: "Codebase & Reliability",
       without:
-        "Low trust, sketchy social DMs layout, fragmented branding elements.",
-      with: "Premium dedicated storefront holding custom checkout security certificates.",
-      icon: "ShieldCheck",
+        "Fragile templates, tangled plugins, and unmaintained code that breaks on every update.",
+      with: "Type-safe Next.js, React, and modular APIs built for maintainability and uptime.",
     },
     {
-      title: "Scalability & Sales",
-      without: "Low direct checkout volume; capped manually by admin hours.",
-      with: "Unlimited concurrent automated sessions driving constant sales around the globe.",
-      icon: "Zap",
+      title: "Performance & Core Web Vitals",
+      without:
+        "Bloated scripts and slow client bundles that hurt SEO rankings and user retention.",
+      with: "Server-rendered architecture, optimized assets, and sub-second page transitions.",
     },
     {
-      title: "Platform Sovereignty",
+      title: "Full IP & Platform Ownership",
       without:
-        "High vulnerability to platform bans, algorithmic drops, and fee edits.",
-      with: "Complete ownership of customer emails, brand pixels, and traffic pipelines.",
-      icon: "Award",
+        "Vendor lock-in, rigid SaaS limits, and recurring fees that restrict custom workflows.",
+      with: "100% source code ownership, clean Git history, and portable cloud infrastructure.",
     },
     {
-      title: "Growth Analytics",
+      title: "Observability & Security",
       without:
-        "Blind guesswork; completely unaware of actual cart dropoff reasons.",
-      with: "Integrated server-side GA4 + Triple Whale intelligence tracking high LTV metrics.",
-      icon: "TrendingUp",
+        "No audit trails, exposed endpoints, and guesswork when production issues occur.",
+      with: "Role-based access control, validated inputs, structured logging, and analytics.",
     },
   ];
+
   return (
     <section className="py-12 sm:py-16 border-b border-border bg-secondary/50 text-center w-full">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Growth Economics"
+          eyebrow="Engineering Advantage"
           title={
             <>
-              E-Commerce Growth:{" "}
-              <span className="text-primary">Legacy vs. Owned Scale</span>.
+              Custom Software vs.{" "}
+              <span className="text-primary">Fragile Templates</span>.
             </>
           }
-          description="Relying entirely on standard template scripts or restricted social platform checkouts limits your branding authority and sales volume. Here is how upgrading elevates your revenue."
+          description="Relying on cobbled-together scripts or rigid no-code builders creates technical debt fast. Here is how purpose-built engineering changes your trajectory."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-14">
@@ -54,17 +52,20 @@ export default function WhyChosseUs() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-foreground font-display">
-                  Legacy, Broken Setup
+                  Patchwork &amp; Template Builds
                 </h4>
                 <p className="text-xs text-muted-foreground">
-                  Stagnant and unstable e-commerce frameworks
+                  Short-term shortcuts that stall product growth
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
               {comparisonData.map((item) => (
-                <div key={item.title} className="border-b border-border last:border-b-0 pb-3.5 last:pb-0">
+                <div
+                  key={item.title}
+                  className="border-b border-border last:border-b-0 pb-3.5 last:pb-0"
+                >
                   <h5 className="text-sm font-medium text-foreground font-sans mb-1">
                     {item.title}
                   </h5>
@@ -79,7 +80,7 @@ export default function WhyChosseUs() {
           {/* With Card */}
           <div className="bg-card border border-primary/40 rounded-2xl p-6 sm:p-8 text-left shadow-md relative overflow-hidden">
             <div className="absolute top-0 right-0 text-[11px] font-medium py-1 px-3.5 rounded-bl-xl bg-primary text-primary-foreground">
-              Optimized Engine
+              Production Standard
             </div>
 
             <div className="flex items-center space-x-3 mb-6">
@@ -88,10 +89,10 @@ export default function WhyChosseUs() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-foreground font-display">
-                  Softzeniq Custom Blueprint
+                  SoftZeniq Custom Architecture
                 </h4>
                 <p className="text-xs font-medium font-sans text-primary">
-                  High-converting asset designed for exponential scale
+                  Clean systems engineered for scale and ownership
                 </p>
               </div>
             </div>

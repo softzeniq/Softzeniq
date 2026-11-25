@@ -19,7 +19,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 rounded-full bg-card border border-border shadow-xs px-3.5 py-1.5 text-xs font-medium text-muted-foreground mb-6"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          Global IT Solutions Partner
+          Software Engineering Studio
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 14 }}
@@ -27,8 +27,8 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight leading-[1.06] text-foreground"
         >
-          Build. Scale. <span className="text-primary">Transform</span>
-          <br className="hidden sm:block" /> with SoftZeniq.
+          Web, mobile &amp; custom software{" "}
+          <span className="text-primary">engineered to scale</span>.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -36,8 +36,9 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed"
         >
-          IT solutions, software and digital growth for startups and businesses
-          worldwide. One senior team, end-to-end — from idea to launch to scale.
+          SoftZeniq designs and builds production web applications, SaaS
+          platforms, and mobile products for startups and growing businesses —
+          from architecture to launch.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

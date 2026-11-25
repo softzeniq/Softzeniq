@@ -6,6 +6,7 @@ import OurMethodology from "@/components/home/OurMethodology";
 import Portfolio from "@/components/home/Portfolio";
 import Service from "@/components/home/Service";
 import Stats from "@/components/home/Stats";
+import TechStack from "@/components/home/TechStack";
 import Testimonial from "@/components/home/Testimonial";
 import WhyChosseUs from "@/components/home/WhyChooseUs";
 import { createClient } from "@/utils/supabase/server";
@@ -19,6 +20,7 @@ export default async function Home() {
       <HeroSection />
       <Stats />
       <Service />
+      <TechStack />
       <WhyChosseUs />
       <Portfolio />
       <Testimonial />

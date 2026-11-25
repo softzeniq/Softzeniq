@@ -15,8 +15,8 @@ export default function CTA() {
               <h2 className="relative text-3xl sm:text-5xl font-semibold tracking-tight text-primary-foreground">
                 Ready to build something remarkable?
               </h2>
-              <p className="relative mt-4 text-primary-foreground/80 max-w-lg mx-auto">
-                Tell us about your idea — we'll send a proposal within 24 hours.
+              <p className="relative mt-4 text-primary-foreground/85 max-w-lg mx-auto leading-relaxed">
+                Tell us about your project — we&apos;ll reply within 24 hours with scope, timeline, and next steps.
               </p>
               <div className="relative mt-8 flex flex-col sm:flex-row justify-center gap-3">
                 <Button

@@ -1,16 +1,18 @@
 import AboutHero from "@/components/about/Hero";
 import MissionVision from "@/components/about/MissionVision";
 import NarrationStory from "@/components/about/NarrationStory";
+import Team from "@/components/about/Team";
+import Timeline from "@/components/about/Timeline";
 import WhyUs from "@/components/about/WhyUs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Our Agency & Mission",
-  description: "Learn about SoftZeniq's story, values, and vision. We are a team of expert engineers, designers, and growth partners committed to digital excellence.",
-  keywords: ["about SoftZeniq", "software development team", "agency story", "tech team", "digital product design"],
+  description: "Learn about SoftZeniq's engineering approach, values, and capabilities. We build reliable web apps, mobile products, and custom software.",
+  keywords: ["about SoftZeniq", "software development team", "engineering agency", "tech team", "digital product design"],
   openGraph: {
-    title: "About SoftZeniq | Our Agency & Mission",
-    description: "Learn about SoftZeniq's story, values, and vision. We are a team of expert engineers, designers, and growth partners committed to digital excellence.",
+    title: "About SoftZeniq | Engineering & Product Studio",
+    description: "Learn about SoftZeniq's engineering approach, values, and capabilities. We build reliable web apps, mobile products, and custom software.",
   }
 };
 
@@ -20,9 +22,9 @@ export default function about() {
       <AboutHero />
       <MissionVision />
       <NarrationStory />
+      <Team />
+      <Timeline />
       <WhyUs />
-      {/* <Team/> */}
-      {/* <Timeline /> */}
     </div>
   );
 }

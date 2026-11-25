@@ -2,9 +2,9 @@ import {
   Code2,
   Compass,
   Lightbulb,
+  Rocket,
   Search,
-  TrendingUp,
-  Zap,
+  ShieldCheck,
 } from "lucide-react";
 import { SectionHeading } from "../shared/SectionHeading";
 
@@ -12,41 +12,42 @@ export default function OurMethodology() {
   const processSteps = [
     {
       step: "01",
-      title: "Discovery Audits",
-      desc: "We fully index your speed metrics, core crawl issues, and brand layout friction limits.",
+      title: "Technical Discovery",
+      desc: "Map business requirements, domain models, integrations, and milestone scope before coding begins.",
       icon: Search,
     },
     {
       step: "02",
-      title: "Growth Strategy",
-      desc: "Map structural improvements, search intent hierarchies, and custom media blueprints.",
-      icon: Lightbulb,
-    },
-    {
-      step: "03",
-      title: "Conversion Design",
-      desc: "Engineered mobile-first Figma prototypes prioritizing thumbs boundaries and cart checkouts.",
+      title: "System & UX Architecture",
+      desc: "Define database schemas, API contracts, design tokens, and interactive Figma flows.",
       icon: Compass,
     },
     {
-      step: "04",
-      title: "Headless Engineering",
-      desc: "Write light scalable Next.js layouts, Shopify api, and optimize for Core Web Vitals.",
+      step: "03",
+      title: "Full-Stack Sprints",
+      desc: "Build type-safe web, mobile, and backend features in weekly demoable engineering sprints.",
       icon: Code2,
     },
     {
+      step: "04",
+      title: "QA & Security Review",
+      desc: "Validate core user paths, role permissions, responsive edge cases, and Core Web Vitals.",
+      icon: ShieldCheck,
+    },
+    {
       step: "05",
-      title: "Autonomous Launch",
-      desc: "Push code to redundant global CDNs after running 140+ precise precheck tests.",
-      icon: Zap,
+      title: "CI/CD & Production Launch",
+      desc: "Deploy with automated pipelines, DNS/SSL hardening, error tracking, and rollback safety.",
+      icon: Rocket,
     },
     {
       step: "06",
-      title: "Scale & Growth Sprints",
-      desc: "Run bi-weekly ad revisions and CRO audits to boost your average order values (AOV).",
-      icon: TrendingUp,
+      title: "Iteration & Long-Term SLA",
+      desc: "Continue shipping product improvements, performance tuning, and priority support post-launch.",
+      icon: Lightbulb,
     },
   ];
+
   return (
     <section className="py-12 sm:py-16 bg-background text-foreground text-center w-full">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -54,11 +55,11 @@ export default function OurMethodology() {
           eyebrow="Our Methodology"
           title={
             <>
-              Structured Sprints to{" "}
-              <span className="text-primary">DTC Dominance</span>.
+              A transparent path from{" "}
+              <span className="text-primary">spec to production</span>.
             </>
           }
-          description="We operate through 6 highly structured, transparent phases that optimize layouts and eliminate checkout friction systemically."
+          description="Six structured engineering phases that keep timelines predictable, codebases clean, and stakeholders aligned."
         />
 
         <div className="mt-14 mx-auto">
