@@ -12,7 +12,7 @@ export default async function Portfolio() {
   return (
     <div className="overflow-x-hidden">
       <section className="relative py-12 sm:py-16">
-        <div className="lg:max-w-7xl md:max-w-3xl sm:max-w-xl max-w-md mx-auto px-5 sm:px-8">
+        <div className="lg:max-w-7xl md:max-w-3xl sm:max-w-xl max-w-md mx-auto px-5 sm:px-4">
           <PortfolioCarousel projects={projects || []} />
 
           <div className="mt-10 text-center">

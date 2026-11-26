@@ -60,7 +60,7 @@ export default function FAQ() {
         description="Clear answers on our engineering process, ownership, timelines, and support."
       />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start text-left">
+      <div className="max-w-7xl mx-auto px-5 sm:px-4 w-full mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start text-left">
         {faqsData.map((faq, index) => (
           <div
             key={index}
@@ -83,11 +83,10 @@ export default function FAQ() {
             </button>
 
             <p
-              className={`text-sm text-muted-foreground px-4 transition-[max-height,opacity] duration-200 ease-out overflow-hidden leading-relaxed ${
-                openIndex === index
+              className={`text-sm text-muted-foreground px-4 transition-[max-height,opacity] duration-200 ease-out overflow-hidden leading-relaxed ${openIndex === index
                   ? "opacity-100 max-h-[300px] pb-4"
                   : "opacity-0 max-h-0"
-              }`}
+                }`}
             >
               {faq.answer}
             </p>

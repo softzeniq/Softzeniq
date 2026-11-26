@@ -50,7 +50,7 @@ export default function OurMethodology() {
 
   return (
     <section className="py-12 sm:py-16 bg-background text-foreground text-center w-full">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-4">
         <SectionHeading
           eyebrow="Our Methodology"
           title={

@@ -31,7 +31,7 @@ export default function WhyChosseUs() {
 
   return (
     <section className="py-12 sm:py-16 border-b border-border bg-secondary/50 text-center w-full">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-4">
         <SectionHeading
           eyebrow="Engineering Advantage"
           title={

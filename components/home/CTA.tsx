@@ -8,7 +8,7 @@ export default function CTA() {
     <div>
       {" "}
       <section className="relative py-12 sm:py-16 w-full">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-4">
           <Reveal>
             <div className="relative rounded-3xl overflow-hidden p-10 sm:p-16 text-center bg-primary shadow-md">
               <div className="absolute inset-0 grid-bg opacity-15" />

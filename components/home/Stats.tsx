@@ -18,7 +18,7 @@ export default async function Stats() {
   const stats = statsData && statsData.length > 0 ? statsData : defaultStats;
 
   return (
-    <div className="max-w-7xl w-full mx-auto px-5 sm:px-8 mt-10 lg:mt-16 relative z-20">
+    <div className="max-w-7xl w-full mx-auto px-5 sm:px-4 mt-10 lg:mt-16 relative z-20">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.05}>

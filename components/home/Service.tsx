@@ -12,7 +12,7 @@ export default async function Service() {
   return (
     <div>
       <section className="relative py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-4">
           <SectionHeading
             eyebrow="What we do"
             title={
